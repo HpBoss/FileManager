@@ -1,13 +1,23 @@
 # FileManager
 [![Android CI 状态](https://github.com/HpBoss/FileManager/workflows/Android%20CI/badge.svg)](https://github.com/zhanghai/MaterialFiles/actions) [![GitHub 发行版](https://img.shields.io/github/v/release/HpBoss/FileManager)](https://github.com/zhanghai/MaterialFiles/releases) [![许可证](https://img.shields.io/github/license/HpBoss/FileManager?color=blue)](LICENSE)
 
-File Manager for DuerOS
+<img src="app/src/main/res/mipmap-xxxhdpi/app_icon.png" />
+
+一款适用于平板（720x1280）的文件管理器
 
 ## 预览
 
-<img src="art/left_drawer.png" alt="left_drawer" style="zoom:33%;" /><img src="art/main_page.png" alt="main_page" style="zoom:33%;" /><img src="art/list_layout.png" alt="list_layout" style="zoom:33%;" /><img src="art/more_operate.png" alt="more_operate" style="zoom:33%;" /><img src="art/recent.png" alt="recent" style="zoom:33%;" /><img src="art/search.png" alt="search" style="zoom:33%;" />
+<img src="art/left_drawer.png" alt="left_drawer" width="32%" /><img src="art/main_page.png" alt="main_page" width="32%" /><img src="art/list_layout.png" alt="list_layout" width="32%" /><img src="art/more_operate.png" alt="more_operate" width="32%" /><img src="art/recent.png" alt="recent" width="32%" /><img src="art/search.png" alt="search" width="32%" />                                                                                                                                                                                                                                                                                         
 
-​                                                                                                                                                                                                                                                                                                             
+## 功能
+
+* 可查看最近30天内发生修改的文件；
+* 支持sdcard目录下未隐藏文件的基本文件操作：复制、移动、删除、重命名；
+* 文件分享：分享文件至QQ、微信等，兼容至Android 13 URI分享；
+* 文件压缩：zip、7z、tar.xz；
+* 文件、文件夹名关键词搜索；
+* 支持文件夹、文件本地收藏；
+* 支持垂直列表和网格布局切换
 
 ## 许可证
 
