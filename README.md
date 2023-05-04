@@ -3,11 +3,11 @@
 
 <img src="app/src/main/res/mipmap-xxxhdpi/app_icon.png" />
 
-一款适用于平板（720x1280）的文件管理器
+一款适用于平板的三方文件管理器
 
 ## 预览
 
-<img src="art/left_drawer.png" alt="left_drawer" width="32%" /><img src="art/main_page.png" alt="main_page" width="32%" /><img src="art/list_layout.png" alt="list_layout" width="32%" /><img src="art/more_operate.png" alt="more_operate" width="32%" /><img src="art/recent.png" alt="recent" width="32%" /><img src="art/search.png" alt="search" width="32%" />                                                                                                                                                                                                                                                                                         
+<p><img src="art/left_drawer.png" alt="left_drawer" width="32%" /><img src="art/main_page.png" alt="main_page" width="32%" /><img src="art/list_layout.png" alt="list_layout" width="32%" /><img src="art/more_operate.png" alt="more_operate" width="32%" /><img src="art/recent.png" alt="recent" width="32%" /><img src="art/search.png" alt="search" width="32%" /></p>                            
 
 ## 功能
 
@@ -18,6 +18,20 @@
 * 文件、文件夹名关键词搜索；
 * 支持文件夹、文件本地收藏；
 * 支持垂直列表和网格布局切换
+
+## 后续新增和优化的功能
+
+* 支持USB设备文件传输
+* UI上可以适配较多不同分辨率的设备
+* 提升压缩、解压文件速度
+* 外部软件使用该文件管理器打开压缩包
+* 多个文件分享时uri data大小限制
+
+## 特别感谢
+
+[MaterialFiles](https://github.com/zhanghai/MaterialFiles)
+
+[SimpleMobileTools](https://github.com/SimpleMobileTools/Simple-File-Manager)
 
 ## 许可证
 
