@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AlwaysShowAction">
+
+    <item
+        android:id="@+id/action_add_file"
+        android:icon="@drawable/add_file_icon"
+        android:orderInCategory="100"
+        android:title="@string/add_file"
+        app:showAsAction="always|collapseActionView" />
+
+    <item
+        android:id="@+id/action_layout_change"
+        android:icon="@drawable/vertical_list_icon"
+        android:title="@string/layout_change"
+        android:orderInCategory="100"
+        app:showAsAction="always|collapseActionView"/>
+
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/sort_icon"
+        android:orderInCategory="100"
+        android:title="@string/sort"
+        app:showAsAction="always">
+    </item>
+</menu>

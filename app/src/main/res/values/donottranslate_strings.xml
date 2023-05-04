@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources>
+    <!-- SevenZFile requires SeekableByteChannel which requires Android N. -->
+    <item name="intent_filter_data_seven_z_mime_type" type="string" format="reference">@null</item>
+</resources>

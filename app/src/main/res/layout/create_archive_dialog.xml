@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/abc_dialog_title_divider_material">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:scrollIndicators="top|bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_dialog_title"/>
+
+            <include layout="@layout/name_dialog_name_include" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/compressRecycleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idCurrentStorageLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="38dp"
+                    android:textColor="@color/md_grey_black"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="18sp"
+                    android:text="@string/storage_location"/>
+
+                <TextView
+                    android:id="@+id/idModifyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="38dp"
+                    android:textColor="@color/dialog_text_color"
+                    android:text="@string/modify"/>
+            </LinearLayout>
+
+            <include layout="@layout/item_dialog_button_group"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.baidu.duer.files.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.baidu.duer.files.ui.IgnoreFitsSystemWindowsFullyDraggableDrawerContentLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <com.baidu.duer.files.ui.PersistentBarLayout
+                android:id="@+id/persistentBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true">
+
+                    <include layout="@layout/file_list_fragment_app_bar_include" />
+
+                    <include layout="@layout/file_list_fragment_content_include" />
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </com.baidu.duer.files.ui.PersistentBarLayout>
+        </com.baidu.duer.files.ui.IgnoreFitsSystemWindowsFullyDraggableDrawerContentLayout>
+
+        <!--
+          ~ We have to set android:fitsSystemWindows="true" here to prevent DrawerLayout from
+          ~ applying the window insets as margins for this view.
+          -->
+        <com.baidu.duer.files.ui.NavigationFrameLayout
+            android:id="@+id/navigationFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/file_navigation_fragment_bg"
+            android:fitsSystemWindows="true" />
+    </com.baidu.duer.files.widget.DrawerLayout>
+</merge>

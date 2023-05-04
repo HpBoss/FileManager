@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<animated-selector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="@android:integer/config_shortAnimTime"
+    android:exitFadeDuration="@android:integer/config_shortAnimTime">
+
+    <item android:state_checked="true" android:drawable="@drawable/checkable_badge_icon_38dp" />
+
+    <item android:state_checked="false" android:drawable="@drawable/uncheckable_badge_38dp" />
+
+    <item android:drawable="@android:color/transparent" />
+</animated-selector>

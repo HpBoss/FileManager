@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/abc_dialog_title_divider_material">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/item_dialog_title" />
+
+        <TextView
+            android:id="@+id/unzip_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="38dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center"
+            android:textColor="@color/bread_crumb_path_text_normal_color"
+            android:textSize="18sp"
+            android:visibility="gone"
+            tools:text="已解压1.0M（共24M）" />
+
+        <LinearLayout
+            android:id="@+id/location_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="38dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/idCurrentStorageLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/storage_location"
+                android:textColor="@color/md_grey_black"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/file_unzip_display_title"
+                    android:textColor="@color/bread_crumb_path_text_normal_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/idModifyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:gravity="center"
+                    android:text="@string/modify"
+                    android:textColor="@color/dialog_text_color"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include layout="@layout/item_dialog_button_group" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="itemName"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemApplicationLayout"
+        android:orientation="vertical"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <ImageView
+            android:id="@+id/application_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/application_name"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:gravity="center|top"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/md_grey_400"
+            android:text="@{itemName}"
+            android:maxWidth="84dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginBottom="25dp"
+            tools:text="微信" />
+    </LinearLayout>
+</layout>

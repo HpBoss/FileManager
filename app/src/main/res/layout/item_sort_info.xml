@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="itemName"
+            type="String" />
+    </data>
+
+    <com.baidu.duer.files.ui.CheckableForegroundLinearLayout
+        android:id="@+id/itemSortLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/sort_item_background"
+        android:foreground="?selectableItemBackground"
+        android:paddingTop="21dp"
+        android:paddingBottom="21dp">
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:duplicateParentState="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/bread_crumb_path_text_normal_color"
+            android:text="@{itemName}"
+            tools:text="最后修改时间" />
+
+        <ImageView
+            android:id="@+id/sort_way_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/sort_normal_icon"/>
+    </com.baidu.duer.files.ui.CheckableForegroundLinearLayout>
+</layout>

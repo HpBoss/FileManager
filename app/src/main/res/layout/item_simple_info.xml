@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="itemName"
+            type="String" />
+    </data>
+
+    <com.baidu.duer.files.ui.CheckableForegroundLinearLayout
+        android:id="@+id/itemSortLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:duplicateParentState="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/bread_crumb_path_text_normal_color"
+            android:text="@{itemName}"
+            tools:text="最后修改时间" />
+    </com.baidu.duer.files.ui.CheckableForegroundLinearLayout>
+</layout>

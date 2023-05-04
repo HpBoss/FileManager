@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources>
+
+    <bool name="pref_default_value_material_design_3">true</bool>
+</resources>

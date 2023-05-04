@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="infoData"
+            type="com.baidu.duer.files.dialog.FileInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/id_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/md_grey_400"
+            android:text="@{infoData.infoTitle}"
+            tools:text="最后修改时间" />
+
+        <TextView
+            android:id="@+id/id_info_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/bread_crumb_path_text_normal_color"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="5dp"
+            android:text="@{infoData.infoContent}"
+            tools:text="2022年12月11日 12:03:45" />
+    </LinearLayout>
+</layout>

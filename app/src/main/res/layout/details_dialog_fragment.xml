@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="40dp">
+
+        <com.baidu.duer.files.ui.DisabledAlphaImageView
+            android:id="@+id/id_file_icon"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center" />
+
+        <com.baidu.duer.files.ui.DisabledAlphaImageView
+            android:id="@+id/thumbnailImage"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:duplicateParentState="true"
+            android:scaleType="fitCenter" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/id_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="11dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/bread_crumb_path_text_normal_color"
+        tools:text="Android" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_file_info_recyclerView"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"/>
+</LinearLayout>

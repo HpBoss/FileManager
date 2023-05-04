@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="4dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="27dp">
+
+    <TextView
+        android:id="@+id/id_date_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_grey_black"
+        android:textSize="18sp"
+        tools:text="2月1日 今天"/>
+</LinearLayout>

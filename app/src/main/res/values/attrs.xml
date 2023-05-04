@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<resources>
+
+    <attr name="colorAppBarSurface" format="color" />
+
+    <declare-styleable name="NavigationViewExtra">
+        <attr name="itemSubtitleTextAppearance" format="reference" />
+        <attr name="itemSubtitleTextColor" format="color" />
+        <attr name="itemSubtitleTextSize" format="dimension" />
+        <attr name="dividerVerticalPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CommonLoadingView">
+        <attr name="isShowTitle" format="boolean"/>
+        <attr name="loadingTheme" format="enum">
+            <enum name="light" value="0"/>
+            <enum name="dark" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RoundTextView">
+        <attr name="rLeftRadius" format="dimension"/>
+        <attr name="rRightRadius" format="dimension"/>
+        <attr name="rTopRadius" format="dimension"/>
+        <attr name="rBottomRadius" format="dimension"/>
+        <attr name="rTopLeftRadius" format="dimension"/>
+        <attr name="rTopRightRadius" format="dimension"/>
+        <attr name="rBottomLeftRadius" format="dimension"/>
+        <attr name="rBottomRightRadius" format="dimension"/>
+        <attr name="rStrokeWidth" format="dimension"/>
+        <attr name="rStrokeColor" format="reference|color"/>
+    </declare-styleable>
+
+    <declare-styleable name="EllipsizedTextView">
+        <attr name="ellipsis" format="string" />
+        <attr name="ellipsisColor" format="color" />
+    </declare-styleable>
+</resources>

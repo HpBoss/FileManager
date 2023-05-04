@@ -1,0 +1,184 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+kapt {
+    correctErrorTypes = true
+}
+apply plugin: 'kotlin-parcelize'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+android {
+    namespace 'com.baidu.duer.files'
+    compileSdkVersion 33
+    ndkVersion '25.1.8937393'
+    buildToolsVersion '33.0.0'
+    sourceSets {
+        main.jniLibs.srcDirs = ['libs']
+    }
+    defaultConfig {
+        applicationId 'com.baidu.duer.filemanager'
+        minSdkVersion 26
+        // Not supporting notification runtime permission yet.
+        // noinspection OldTargetApi
+        targetSdkVersion 32
+        versionCode VERSION_CODE as int
+        versionName VERSION_NAME as String
+        resValue 'string', 'app_version', versionName + ' (' + versionCode + ')'
+        buildConfigField 'String', 'FILE_PROVIDIER_AUTHORITY', 'APPLICATION_ID + ".file_provider"'
+        buildConfigField 'String', 'URI_PROVIDIER_AUTHORITY', 'APPLICATION_ID + ".uri_provider"'
+        resValue 'string', 'app_provider_authority', applicationId + '.app_provider'
+        resValue 'string', 'file_provider_authority', applicationId + '.file_provider'
+        resValue 'string', 'uri_provider_authority', applicationId + '.uri_provider'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+
+        // FileManager Apk主进程CrabKey
+        buildConfigField "String", "crab_key", "\"eafe1624018ec5a8\""
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (variant.buildType.name == 'release' || variant.buildType.name == 'debug') {
+                def fileName = "FileManager_${variant.buildType.name}_${VERSION_NAME}.apk"
+                outputFileName = fileName
+            }
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 因为APK会在Jenkins平台签v2签名（Sin_Apps_v2）因此工程中不配置签名
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES']
+        }
+    }
+    lint {
+        warning 'InvalidPackage', 'MissingTranslation'
+    }
+}
+
+repositories {
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // kotlinx-coroutines-android depends on kotlin-stdlib-jdk8
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$KOTLINX_COROUTINES_VERSION"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$KOTLINX_COROUTINES_VERSION"
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.exifinterface:exifinterface:1.3.5'
+    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+
+    implementation "androidx.lifecycle:lifecycle-common-java8:$ANDROIDX_LIFECYCLE_VERSION"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$ANDROIDX_LIFECYCLE_VERSION"
+    implementation "androidx.lifecycle:lifecycle-process:$ANDROIDX_LIFECYCLE_VERSION"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$ANDROIDX_LIFECYCLE_VERSION"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$ANDROIDX_LIFECYCLE_VERSION"
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.google.android.material:material:1.7.0'
+
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    releaseImplementation 'com.github.mypplication:stetho-noop:1.1'
+    implementation 'com.github.topjohnwu.libsu:service:5.0.3'
+    implementation 'com.caverock:androidsvg-aar:1.4'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+    implementation 'com.drakeet.drawer:drawer:1.0.3'
+    debugImplementation 'com.facebook.stetho:stetho:1.6.0'
+    implementation 'com.h6ah4i.android.materialshadowninepatch:materialshadowninepatch:1.0.0'
+    implementation 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:1.0.0'
+    implementation('com.hierynomus:smbj:0.11.5') {
+        exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+    }
+    implementation('com.hierynomus:sshj:0.32.0') {
+        exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+    }
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.4.0'
+    implementation 'com.leinardi.android:speed-dial:3.1.1'
+    implementation('com.rapid7.client:dcerpc:0.12.0') {
+        exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+    }
+    implementation 'org.bouncycastle:bcprov-jdk15to18:1.70'
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+    implementation 'com.takisoft.preferencex:preferencex:1.1.0'
+    implementation 'commons-net:commons-net:3.8.0'
+
+    implementation 'de.psdev.licensesdialog:licensesdialog:2.1.0'
+
+    implementation 'dev.chrisbanes:insetter-ktx:0.3.1'
+    implementation 'dev.rikka.rikkax.preference:simplemenu-preference:1.0.3'
+    implementation 'dev.rikka.shizuku:api:12.0.0'
+    implementation 'eu.agno3.jcifs:jcifs-ng:2.1.6'
+    def coil_version = '2.2.2'
+    implementation "io.coil-kt:coil:$coil_version"
+    implementation "io.coil-kt:coil-gif:$coil_version"
+    implementation "io.coil-kt:coil-svg:$coil_version"
+    implementation "io.coil-kt:coil-video:$coil_version"
+    implementation 'me.zhanghai.android.appiconloader:appiconloader:1.5.0'
+    implementation 'me.zhanghai.android.fastscroll:library:1.1.8'
+    implementation 'me.zhanghai.android.foregroundcompat:library:1.0.2'
+    implementation 'me.zhanghai.android.libselinux:library:2.1.0'
+    implementation 'me.zhanghai.android.retrofile:library:1.1.1'
+    implementation 'me.zhanghai.android.systemuihelper:library:1.0.0'
+    implementation 'net.sourceforge.streamsupport:android-retrostreams:1.7.4'
+    implementation 'org.apache.commons:commons-compress:1.20'
+    // Optional dependency of Commons Compress for 7Z LZMA.
+    implementation 'org.tukaani:xz:1.9'
+    implementation 'org.apache.ftpserver:ftpserver-core:1.2.0'
+    implementation('org.apache.mina:mina-core') {
+        version {
+            strictly '2.1.3'
+        }
+    }
+    implementation "io.reactivex.rxjava3:rxjava:3.1.6"
+    implementation 'com.github.junrar:junrar:7.4.1'
+
+    implementation("androidx.room:room-runtime:$ROOM_VERSION")
+    annotationProcessor("androidx.room:room-compiler:$ROOM_VERSION")
+    kapt("androidx.room:room-compiler:$ROOM_VERSION")
+    implementation "androidx.room:room-ktx:$ROOM_VERSION"
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    implementation 'io.github.scwang90:refresh-header-classics:2.0.5'
+    implementation 'com.github.penfeizhou.android.animation:awebp:2.24.0'
+    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.baidu.duer.files.ui.BottomBarLayout
+        android:id="@+id/bottomBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?colorSurface"
+        android:elevation="@dimen/design_appbar_elevation"
+        android:fitsSystemWindows="true"
+        android:theme="?actionBarTheme">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bottomToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:paddingStart="@dimen/file_list_toolbar_padding_start"
+            android:paddingEnd="@dimen/file_list_toolbar_padding_end_no_overflow"
+            app:navigationIcon="@drawable/close_icon_control_normal_24dp"
+            app:popupTheme="?actionBarPopupTheme" />
+    </com.baidu.duer.files.ui.BottomBarLayout>
+</merge>

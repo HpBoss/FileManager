@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/buttonGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="30dp">
+
+        <com.baidu.duer.files.widget.RoundTextView
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:foreground="?selectableItemBackground"
+            android:background="@drawable/dialog_cancel_button_bg"
+            android:textColor="@color/dialog_text_color"
+            android:text="@string/dialog_button_cancel"
+            app:rTopLeftRadius="28dp"
+            app:rTopRightRadius="28dp"
+            app:rBottomRightRadius="28dp"
+            app:rBottomLeftRadius="28dp" />
+
+        <com.baidu.duer.files.widget.RoundTextView
+            android:id="@+id/buttonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:foreground="?selectableItemBackground"
+            android:background="@drawable/dialog_confirm_button_bg"
+            android:text="@string/dialog_button_confirm"
+            app:rTopLeftRadius="28dp"
+            app:rTopRightRadius="28dp"
+            app:rBottomRightRadius="28dp"
+            app:rBottomLeftRadius="28dp" />
+    </LinearLayout>
+</merge>

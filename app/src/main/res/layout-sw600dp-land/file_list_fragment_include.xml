@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.baidu.duer.files.ui.PersistentBarLayout
+        android:id="@+id/persistentBarLayout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <com.baidu.duer.files.ui.PersistentDrawerLayout
+                android:id="@+id/persistentDrawerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/file_navigation_fragment_bg">
+
+                <com.baidu.duer.files.ui.NavigationFrameLayout
+                    android:id="@+id/navigationFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/file_navigation_fragment_bg"
+                    android:layout_marginTop="17dp"
+                    android:layout_gravity="start" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <include
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        layout="@layout/file_list_fragment_app_bar_include" />
+
+                    <include layout="@layout/file_list_fragment_content_include" />
+
+                </LinearLayout>
+            </com.baidu.duer.files.ui.PersistentDrawerLayout>
+        </LinearLayout>
+    </com.baidu.duer.files.ui.PersistentBarLayout>
+</merge>

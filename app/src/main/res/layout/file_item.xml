@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<com.baidu.duer.files.ui.CheckableForegroundLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/two_line_list_item_height"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:duplicateParentState="true"
+        android:layout_weight="1"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:duplicateParentState="true"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/iconLayout"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_gravity="top"
+                android:clipToPadding="false"
+                android:duplicateParentState="true">
+
+                <com.baidu.duer.files.ui.DisabledAlphaImageView
+                    android:id="@+id/iconImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/file_directory_icon"
+                    android:scaleType="centerCrop" />
+
+                <com.baidu.duer.files.ui.DisabledAlphaImageView
+                    android:id="@+id/thumbnailImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:duplicateParentState="true"
+                    android:scaleType="fitCenter" />
+
+                <com.baidu.duer.files.ui.DisabledAlphaImageView
+                    android:id="@+id/itemCheckBadgeImage"
+                    android:layout_width="@dimen/badge_size"
+                    android:layout_height="@dimen/badge_size"
+                    android:layout_gravity="end|bottom"
+                    android:duplicateParentState="true"
+                    android:src="@drawable/checkable_badge_38dp" />
+
+                <ImageView
+                    android:id="@+id/idCollectIcon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/collect_icon_20dp"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/left_collect_icon" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:gravity="center|start"
+                android:duplicateParentState="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/md_grey_black"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:includeFontPadding="false"
+                    tools:text="Android"/>
+
+                <com.baidu.duer.files.ui.AutoGoneTextView
+                    android:id="@+id/descriptionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:duplicateParentState="true"
+                    android:textColor="@color/md_grey_400_dark"
+                    android:layout_marginTop="6dp"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:includeFontPadding="false"
+                    android:textAppearance="?textAppearanceListItemSecondary"
+                    tools:text="2023/03/01 | 2项"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/menuButton"
+                android:layout_width="@dimen/touch_target_size"
+                android:layout_height="@dimen/touch_target_size"
+                android:layout_marginStart="@dimen/content_start_from_screen_edge_margin_minus_36dp_considering_at_least_8dp"
+                android:layout_marginEnd="@dimen/screen_edge_margin_minus_12dp_at_least_8dp"
+                android:src="@drawable/vertical_list_entry_icon" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/md_grey_200"/>
+
+</com.baidu.duer.files.ui.CheckableForegroundLinearLayout>

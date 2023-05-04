@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- app:statusBarBackground is broken when scrolling. -->
+    <com.baidu.duer.files.ui.CoordinatorAppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorAppBarSurface"
+        android:theme="?actionBarTheme"
+        android:layout_marginTop="23dp"
+        app:liftOnScroll="true"
+        app:liftOnScrollTargetViewId="@id/recyclerView">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="@integer/file_list_toolbar_scroll_flags">
+
+            <com.baidu.duer.files.ui.CrossfadeSubtitleToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:paddingStart="0dp"
+                android:paddingEnd="40dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="?actionBarPopupTheme"
+                app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Small">
+
+                <ImageView
+                    android:id="@+id/id_img_button_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:visibility="gone"
+                    android:src="@drawable/page_back_icon_46dp"
+                    android:layout_marginStart="34dp"
+                    android:contentDescription="@string/description_top_back" />
+
+                <TextView
+                    android:id="@+id/id_current_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/md_grey_black"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="70dp"
+                    android:textSize="24sp"/>
+
+            </com.baidu.duer.files.ui.CrossfadeSubtitleToolbar>
+
+            <com.baidu.duer.files.ui.OverlayToolbar
+                android:id="@+id/overlayToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:paddingStart="@dimen/file_list_toolbar_padding_start"
+                android:paddingEnd="40dp"
+                android:background="?colorAppBarSurface"
+                android:visibility="gone"
+                android:gravity="center"
+                app:navigationIcon="@drawable/close_icon_control_normal_24dp"
+                app:popupTheme="?actionBarPopupTheme" />
+        </FrameLayout>
+
+        <com.baidu.duer.files.filelist.BreadcrumbLayout
+            android:id="@+id/breadcrumbLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="@dimen/screen_edge_margin_minus_12dp" />
+    </com.baidu.duer.files.ui.CoordinatorAppBarLayout>
+</merge>

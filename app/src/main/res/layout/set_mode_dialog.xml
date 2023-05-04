@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/abc_dialog_title_divider_material">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:scrollIndicators="top|bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="?dialogPreferredPadding"
+            android:paddingEnd="?dialogPreferredPadding"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <com.baidu.duer.files.ui.ReadOnlyTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/file_properties_permissions_owner">
+
+                <com.baidu.duer.files.ui.ReadOnlyTextInputEditText
+                    android:id="@+id/ownerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.baidu.duer.files.ui.DropDownView
+                    android:id="@+id/ownerDropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </com.baidu.duer.files.ui.ReadOnlyTextInputLayout>
+
+            <com.baidu.duer.files.ui.ReadOnlyTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/file_properties_permissions_group">
+
+                <com.baidu.duer.files.ui.ReadOnlyTextInputEditText
+                    android:id="@+id/groupText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.baidu.duer.files.ui.DropDownView
+                    android:id="@+id/groupDropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </com.baidu.duer.files.ui.ReadOnlyTextInputLayout>
+
+            <com.baidu.duer.files.ui.ReadOnlyTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/file_properties_permissions_set_mode_others">
+
+                <com.baidu.duer.files.ui.ReadOnlyTextInputEditText
+                    android:id="@+id/othersText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.baidu.duer.files.ui.DropDownView
+                    android:id="@+id/othersDropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </com.baidu.duer.files.ui.ReadOnlyTextInputLayout>
+
+            <com.baidu.duer.files.ui.ReadOnlyTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/file_properties_permissions_set_mode_special">
+
+                <com.baidu.duer.files.ui.ReadOnlyTextInputEditText
+                    android:id="@+id/specialText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.baidu.duer.files.ui.DropDownView
+                    android:id="@+id/specialDropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+            </com.baidu.duer.files.ui.ReadOnlyTextInputLayout>
+
+            <CheckBox
+                android:id="@+id/recursiveCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-7dp"
+                android:layout_marginTop="8dp"
+                android:paddingStart="@dimen/dialog_padding_minus_7dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/file_properties_permissions_recursive"
+                android:textAppearance="?textAppearanceListItem" />
+
+            <CheckBox
+                android:id="@+id/uppercaseXCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-7dp"
+                android:paddingStart="@dimen/dialog_padding_minus_7dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/file_properties_permissions_set_mode_uppercase_x"
+                android:textAppearance="?textAppearanceListItem" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
